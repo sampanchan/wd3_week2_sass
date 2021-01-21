@@ -1,0 +1,39 @@
+@use "variables";
+
+//small devices
+@mixin  bp-small {
+    @media screen and (min-width: variables.$breakpoint-phone) {
+        a:hover{
+            color: rgb(154, 34, 178);
+            transition: color 0.3s ease; 
+        }
+        @content;
+    }
+}
+
+
+//medium devices
+@mixin bp-medium {
+    @media screen and (min-width: variables.$breakpoint-tablet) {
+        @content;
+    }
+}
+
+//Large devices
+@mixin bp-large {
+    @media screen and (min-width: variables.$breakpoint-desktop) {
+        a:hover{
+            color: rgb(33, 202, 132);
+            transition: color 0.3s ease; 
+        }
+        @content;
+    }
+}
+
+//XL devices
+@mixin bp-xl {
+    @media screen and (min-width: variables.$breakpoint-xl) {
+        @content;
+    }
+    
+}

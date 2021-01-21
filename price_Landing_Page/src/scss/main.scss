@@ -1,0 +1,473 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+// @import 'reset';
+@use "reset";
+@use "variables";
+@use "mixins";
+
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: variables.$black;
+	font-family: variables.$main-font;
+	
+}
+
+
+
+
+/* 2. Content ================================= */
+
+.container{
+
+	margin: 20px;
+	a:hover{
+		color: rgb(22, 32, 121);
+		transition: color 0.3s ease; 
+	}
+	
+
+	header{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding-top:20px;
+		padding-bottom: 20px;
+		margin:20px;
+
+
+		.header__title{
+			font-weight: 600;
+			font-size: 30px;
+			color: variables.$cool	
+		}
+		nav{
+			display: none;
+
+			@include mixins.bp-medium{
+				display: block ;
+			}
+		}
+		
+
+		ul{
+			display: flex;
+			flex-direction: column;	
+			align-items: center;
+			@include mixins.bp-medium{
+				flex-direction: row;
+			}
+		}
+		li{
+			margin-right: 2rem;
+			a{
+			&:hover{
+				color: rgb(122, 133, 228);
+				transition: color 0.3s ease; 
+			}
+				color: variables.$links;
+				text-decoration: none;
+				@include mixins.bp-large{
+					&:hover{
+						color: rgb(33, 202, 132);
+						transition: color 0.3s ease; 
+					}
+				}
+			}
+			
+		}
+		.toggle{
+			display:flex;
+			flex-direction: column;
+			border: #cccccc solid 1px;  
+			padding: 6px;
+			cursor: pointer;
+			
+			>div{
+				
+				background-color: variables.$white;
+				width: 20px;
+				height: 2px;
+				margin: 3px;
+				transition: all .4s ease;
+				transform-origin:0 0; 
+			}
+			@include mixins.bp-medium{
+				display: none ;
+			}
+		}
+		.coolTog{
+			display: block;
+    		background-color: white;
+    		padding: 10px; 
+    		border-radius: 20px;
+    		margin: 0 auto;
+		}
+	}
+	.hero__image{
+		background-image: url(https://i.ytimg.com/vi/wKoHS2aKSUI/maxresdefault.jpg);
+		width: 100%;
+
+
+		.hero{
+		width: 90%;
+		max-width: 1200px;
+		margin: 0 auto;
+		background: variables.$hero;
+		flex-grow: inherit;
+		border: .5px solid variables.$white;
+		padding: 2rem;
+		
+
+		.hero__background{
+			background: variables.$backgroundGradient;
+			width:95%;
+			margin: 0 auto;
+			margin-bottom: 0;
+			border-radius: 20px;
+			padding: 3rem;
+		}
+
+		h2{
+			color: variables.$white;
+			text-align: center;
+			font-size: 30px;
+			padding:0rem;	
+			font-family: variables.$second-font;
+		}
+		h3{
+			@extend h2;
+			font-size: 15px;
+			padding:2rem;
+		}
+		.hero__ul{
+			display: flex;
+			flex-direction: row;
+			@include mixins.bp-medium{
+				justify-content: center;
+			}
+
+			>li{
+				margin:5px;
+		
+				>a{
+					&:hover{
+						color: rgb(122, 133, 228);
+						transition: color 0.3s ease; 
+					}
+					text-decoration: none;
+					padding: 20px;
+					background: variables.$buttons;
+					color: variables.$white;
+					border-radius: 10px;
+					border: solid .5px white;
+					@include mixins.bp-large{
+						&:hover{
+							color: rgb(33, 202, 132);
+							transition: color 0.3s ease; 
+						}
+					}
+				}
+			}
+		
+			@include mixins.bp-large{
+				padding-bottom: 10px;
+			}
+		}	
+	}
+	}
+	
+
+	main{
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		margin: 0 auto;
+		width: 100%;
+		@include mixins.bp-medium{
+			flex-direction: column;
+		}
+
+		>section{
+			background: variables.$white;
+			border-radius: 10px;
+			margin: 0 auto;
+			
+			padding: 20px;
+			align-items: center;
+			margin-left:1rem;
+			margin: 2rem;
+
+			@include mixins.bp-large{
+				width: 100%;
+				flex-basis: 33.33%;
+			}
+		}
+		h4{
+			font-size: 30px;
+			font-weight: 700;
+			text-align: center;
+		}
+		.price__descrip{
+			color: gray;
+			text-align: center;
+		}
+		p{
+			@extend .price__descrip;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		.price{
+			@extend h4;
+			color: black;
+		}
+		.price__links{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			padding-bottom:20px;
+			>li{
+				margin: 10px;
+				padding: 10px;
+				
+				>a{
+					&:hover{
+						color: rgb(122, 133, 228);
+						transition: color 0.3s ease; 
+					}
+					padding: 20px;
+					text-decoration: none;
+					background: variables.$buttons;
+					color: variables.$white;
+					border-radius: 10px;
+					border: solid 1px black;
+					@include mixins.bp-large{
+						&:hover{
+							color: rgb(33, 202, 132);
+							transition: color 0.3s ease; 
+						}
+					}
+				}
+			}
+
+		}
+		.price__list{
+			color: variables.$cool;
+			display: flex;
+			flex-direction: column;
+			margin: auto;
+			>li{
+				padding-bottom: 10px;
+				
+			}	
+		}
+
+		@include mixins.bp-large{
+			flex-direction: row;
+		}
+	}
+	.questions{
+		color: variables.$white;
+		font-family: variables.$second-font;
+		font-size: 30px;
+		padding-bottom: 1rem;
+		display: flex;
+		flex-direction: column ;
+		margin-left: auto 0;
+		>h5{
+			padding-top: 2rem;
+			padding-bottom: 10px;
+			text-align: center;
+		}
+		
+
+		.questions__list{
+			@include mixins.bp-medium{
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				margin: 2rem;
+			}
+			@include mixins.bp-large{
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				margin: 2rem;
+			}
+		}
+		.questions__ul li{
+			padding-bottom: 30px;
+			>a{
+				&:hover{
+					color: rgb(122, 133, 228);
+					transition: color 0.3s ease; 
+				}
+				color: variables.$cool;
+				text-decoration: none;
+				font-size: 18px;
+			}
+			@include mixins.bp-large{
+				margin: 1rem;
+				font-size: 20px;
+			}
+		}
+	}
+	.external__links{
+		display: flex;
+		flex-direction: column;
+		@include mixins.bp-medium{
+			flex-direction: row;
+			justify-content: space-evenly;
+		}
+
+		.external__columns{
+
+			@include mixins.bp-medium{
+			
+				
+			}
+			
+		
+			>p{
+				color: variables.$white;
+				font-size: 20px;
+				padding-bottom: 10px;
+				display: flex;
+				flex-direction: column;
+				@include mixins.bp-medium{
+					flex-direction: row;
+				}
+			}
+	
+			>ul{
+				margin:10px;
+				
+				>li{
+					margin:0px 0px 5px;
+					>a{
+						color: variables.$links;
+						text-decoration: none;
+						&:hover{
+							color: rgb(122, 133, 228);
+							transition: color 0.3s ease; 
+							
+						}
+						@include mixins.bp-large{
+							&:hover{
+								color: rgb(33, 202, 132);
+								transition: color 0.3s ease; 
+							}
+						}
+					}
+				}
+			}
+		}
+	}	
+	.external__columns{
+		display: flex;
+		flex-direction: column;
+	
+		>p{
+			color: variables.$white;
+			font-size: 20px;
+			padding-bottom: 10px;
+			display: flex;
+			flex-direction: column;
+			@include mixins.bp-medium{
+				// flex-basis:33.33% ;
+				// width: 100%;
+				// justify-content: center;
+				flex-direction: row;
+			}
+		}
+
+		>ul{
+			margin:10px;
+			
+			>li{
+				margin:0px 0px 5px;
+				>a{
+					color: variables.$links;
+					text-decoration: none;
+					&:hover{
+						color: rgb(122, 133, 228);
+						transition: color 0.3s ease; 
+						
+					}
+					@include mixins.bp-large{
+						&:hover{
+							color: rgb(33, 202, 132);
+							transition: color 0.3s ease; 
+						}
+					}
+				}
+			}
+		}
+	}
+}
+footer{
+	a:hover{
+		color: rgb(122, 133, 228);
+		transition: color 0.3s ease; 
+	}
+	background:black;
+	color: variables.$white;
+	font-family: variables.$second-font;
+	padding: 2rem;
+	// display: flex;
+	justify-content: space-between;
+	@include mixins.bp-medium{
+		display: flex;
+	}
+	@include mixins.bp-large{
+		display: flex;
+	}
+	>div{
+		>h6{
+			font-size: 20px;
+		}
+		>p{
+			color: variables.$background;
+			padding-top: 15px;
+			font-weight: 300;
+		}
+		
+	}
+	>ul{
+		display: flex ;
+		justify-content: center;
+		margin: 15px;
+		>li{
+			padding-top: 20px;
+			@include mixins.bp-large{
+				padding-top: 0;
+			}
+			>a{
+				color: variables.$links;
+				text-decoration: none;
+				margin:20px;
+				
+			}
+		}	
+	}
+}

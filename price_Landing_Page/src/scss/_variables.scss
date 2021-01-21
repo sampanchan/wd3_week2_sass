@@ -1,0 +1,36 @@
+// 0 breakpoints ==================================== 
+// small tablets and large smartphones (landscape view)
+$breakpoint-phone: 576px;
+
+// small tablets (portrait view)
+$breakpoint-tablet: 768px;
+
+// tablets and small desktops
+$breakpoint-desktop: 992px;
+
+//large tabletss and desktops
+$breakpoint-xl: 1200px;
+
+
+
+// * 1. Colors =======================================
+$white: #fff;
+$blue: #151E46;
+$black: rgb(32, 32, 32);
+$background: rgb(209,239,244);
+$backgroundGradient: linear-gradient(90deg, rgba(209,239,244,1) 0%, rgba(123,162,209,1) 49%, rgba(66,85,232,1) 97%);
+$links: #65d6f8;
+$hero: linear-gradient(90deg, rgba(212, 229, 232, 0.37) 0%, rgba(176,219,232,0.37) 49%, rgba(144,157,190,0.37) 97%);
+$background: rgba(178, 186, 224, .5);
+$cool: #68b4f3;
+$buttons: rgb(20, 64, 158);
+
+
+// * 2. Fonts ==========================================
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kulim+Park:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+$main-font:'Kulim Park', sans-serif;
+$second-font: 'Roboto Condensed', sans-serif;
