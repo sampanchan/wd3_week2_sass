@@ -27,8 +27,9 @@ TABLE OF CONTENTS:
 }
 
 body {
-	background: rgb(63, 47, 47);
-	// background: url(..src/img/code1.jpg);
+	background: black;
+	
+
 	font-family: variables.$main-font;
 	
 }
@@ -39,8 +40,16 @@ body {
 /* 2. Content ================================= */
 
 .container{
-
-	margin: 20px;
+	// background-image: url(https://i.pinimg.com/originals/37/e6/3c/37e63c9058765ed27f7b0d9775105133.jpg);
+	background:linear-gradient(180deg, rgba(172,160,160,1) 5%, rgba(0,0,0,0.7712272408963585) 93%),
+	url(https://i.pinimg.com/originals/37/e6/3c/37e63c9058765ed27f7b0d9775105133.jpg);
+	
+	background-blend-mode: darken;
+	background-repeat: no-repeat;
+	background-position:top, center;
+	background-attachment: fixed, fixed;
+	width: 100%;
+	
 	a:hover{
 		color: rgb(22, 32, 121);
 		transition: color 0.3s ease; 
@@ -54,7 +63,10 @@ body {
 		justify-content: space-between;
 		padding-top:20px;
 		padding-bottom: 20px;
-		margin:20px;
+		background: black;
+		position: fixed ;
+		width: 100%;
+		
 
 
 		.header__title{
@@ -64,6 +76,7 @@ body {
 		}
 		nav{
 			display: none;
+
 
 			@include mixins.bp-medium{
 				display: block ;
@@ -81,6 +94,12 @@ body {
 		}
 		li{
 			margin-right: 2rem;
+			transition: font-size .3s ease-in,
+				 			color 0.3s ease;
+				&:hover {
+				font-size: 22px;
+				transform: scale(1);
+				}
 			a{
 			&:hover{
 				color: rgb(122, 133, 228);
@@ -126,11 +145,14 @@ body {
 		}
 	}
 	.hero__image{
-		background-image: url(https://i.ytimg.com/vi/wKoHS2aKSUI/maxresdefault.jpg);
+		
 		width: 100%;
-
+		padding-top: 100px;
+		// position: relative;
 
 		.hero{
+		
+
 		width: 90%;
 		max-width: 1200px;
 		margin: 0 auto;
@@ -246,7 +268,8 @@ body {
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
-			padding-bottom:20px;
+			padding-top: 20px;
+			padding-bottom:25px;
 			>li{
 				margin: 10px;
 				padding: 10px;
@@ -292,7 +315,44 @@ body {
 			flex-direction: row;
 		}
 	}
+	.student__img__container{
+		text-align: center;
+		::before,
+		::after{
+			content: "";
+
+		}
+
+		figure img{
+			width: 450px;
+			height: auto;
+			
+			
+		}
+		.student__button{
+			background: rgb(122, 133, 228);
+
+			border: none;
+			font-family: variables.$second-font;
+			font-size: 20px;
+			margin: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			&:hover{
+				-webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 0px 0px 9px 5px rgba(255,255,255,0); 
+				box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 0px 0px 9px 5px rgba(255,255,255,0);
+				transition: .3s ease;
+			}
+			>a{
+				text-decoration: none;
+				color: white;
+			}
+		}
+	}
 	.questions{
+		background:url(https://thumbs.dreamstime.com/t/laptop-black-screen-isolated-background-d-illustr-106598328.jpg), black;
+		background-repeat: no-repeat;
+		background-position:  bottom 10px right 100px;
 		color: variables.$white;
 		font-family: variables.$second-font;
 		font-size: 30px;
@@ -323,6 +383,14 @@ body {
 		}
 		.questions__ul li{
 			padding-bottom: 30px;
+			
+			transition: font-size .3s ease-in,
+				 			color 0.3s ease;
+			&:hover {
+				// color: rgb(122, 133, 228);
+				font-size: 25px;
+				transform: scale(1);
+			}
 			>a{
 				&:hover{
 					color: rgb(122, 133, 228);
@@ -370,6 +438,7 @@ body {
 				
 				>li{
 					margin:0px 0px 5px;
+					
 					>a{
 						color: variables.$links;
 						text-decoration: none;
@@ -388,54 +457,75 @@ body {
 				}
 			}
 		}
-	}	
-	.external__columns{
-		display: flex;
-		flex-direction: column;
-	
-		>p{
-			color: variables.$white;
-			font-size: 20px;
-			padding-bottom: 10px;
+	}
+	.external__links{
+		&:hover{
+			background: rgba(54, 54, 54, 0.711);
+			background-image: url(https://static.thenounproject.com/png/203624-200.png);
+			background-position: right;
+			background-repeat: no-repeat;
+		
+		}
+		@include mixins.bp-medium{
+			background-repeat: repeat-x;
+			background-position: left;
+		}
+		.external__columns{
 			display: flex;
 			flex-direction: column;
-			@include mixins.bp-medium{
-				// flex-basis:33.33% ;
-				// width: 100%;
-				// justify-content: center;
-				flex-direction: row;
-			}
-		}
-
-		>ul{
-			margin:10px;
 			
-			>li{
-				margin:0px 0px 5px;
-				>a{
-					color: variables.$links;
-					text-decoration: none;
-					&:hover{
-						color: rgb(122, 133, 228);
-						transition: color 0.3s ease; 
-						
-					}
-					@include mixins.bp-large{
+		
+			>p{
+				color: variables.$white;
+				font-size: 20px;
+				margin-top: 1rem;
+				padding-bottom: 10px;
+				display: flex;
+				flex-direction: column;
+				@include mixins.bp-medium{
+					flex-direction: row;
+				}
+			}
+
+			>ul{
+				margin:10px;
+				
+				>li{
+					margin:0px 0px 5px;
+					
+				transition: font-size .3s ease-in,
+				 			color 0.3s ease;
+				&:hover {
+				font-size: 22px;
+				transform: scale(1);
+				}
+					
+					>a{
+						color: variables.$links;
+						text-decoration: none;
 						&:hover{
-							color: rgb(33, 202, 132);
+							color: rgb(122, 133, 228);
 							transition: color 0.3s ease; 
+							
+						}
+						@include mixins.bp-large{
+							&:hover{
+								color: rgb(33, 202, 132);
+								transition: color 0.3s ease; 
+							}
 						}
 					}
 				}
 			}
 		}
-	}
 }
+}
+
+
+
 footer{
-	a:hover{
-		color: rgb(122, 133, 228);
-		transition: color 0.3s ease; 
-	}
+	
+	
 	background:black;
 	color: variables.$white;
 	font-family: variables.$second-font;
@@ -465,6 +555,14 @@ footer{
 		margin: 15px;
 		>li{
 			padding-top: 20px;
+			transition: font-size .3s ease-in,
+				 			color 0.3s ease;
+			&:hover {
+				// color: rgb(122, 133, 228);
+				font-size: 22px;
+				transform: scale(1);
+			}
+			// transition: transform .3s ease-in;
 			@include mixins.bp-large{
 				padding-top: 0;
 			}
@@ -473,7 +571,33 @@ footer{
 				text-decoration: none;
 				margin:20px;
 				
+				&:hover{
+					color: rgb(122, 133, 228);
+				}
+				
 			}
 		}	
+	}
+	.footer__social{
+	 >ul{
+		 display: flex;
+		justify-content: center;
+		margin: 15px;
+		>li{
+			animation: rotation 2s infinite linear;
+			>a{
+				color:white;
+				margin:20px;
+				
+				&:hover{
+					color: rgb(224, 160, 229);
+					
+				}
+			}
+		}
+	 }
+	 .fa-twitter{
+		transform: rotate(50)
+	 }
 	}
 }

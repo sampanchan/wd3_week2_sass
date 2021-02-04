@@ -20,7 +20,7 @@
 @mixin bp-large {
     @media screen and (min-width: variables.$breakpoint-desktop) {
         a:hover{
-            color: rgb(33, 202, 132);
+            color: rgb(33, 202, 132)!important ;
             transition: color 0.3s ease; 
         }
         @content;
