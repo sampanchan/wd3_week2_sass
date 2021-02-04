@@ -158,7 +158,7 @@ TABLE OF CONTENTS:
 }
 
 body {
-  background: #202020;
+  background: #3f2f2f;
   font-family: "Kulim Park", sans-serif;
 }
 
@@ -381,6 +381,16 @@ body {
 .container main .price__links > li {
   margin: 10px;
   padding: 10px;
+}
+@media screen and (min-width: 992px) {
+  .container main .price__links > li {
+    margin: 0px;
+    padding: 5px;
+  }
+  .container main .price__links > li a:hover {
+    color: #21ca84;
+    transition: color 0.3s ease;
+  }
 }
 .container main .price__links > li > a {
   padding: 20px;

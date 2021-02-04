@@ -3,10 +3,7 @@
 //small devices
 @mixin  bp-small {
     @media screen and (min-width: variables.$breakpoint-phone) {
-        a:hover{
-            color: rgb(154, 34, 178);
-            transition: color 0.3s ease; 
-        }
+        
         @content;
     }
 }
