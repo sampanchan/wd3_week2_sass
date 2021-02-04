@@ -186,6 +186,7 @@ body {
 		.hero__ul{
 			display: flex;
 			flex-direction: row;
+			justify-content: center;
 			@include mixins.bp-medium{
 				justify-content: center;
 			}

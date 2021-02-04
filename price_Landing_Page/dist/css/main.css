@@ -299,6 +299,7 @@ body {
 .container .hero__image .hero .hero__ul {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 @media screen and (min-width: 768px) {
   .container .hero__image .hero .hero__ul {
