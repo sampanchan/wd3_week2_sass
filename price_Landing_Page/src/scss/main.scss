@@ -192,18 +192,23 @@ body {
 
 			>li{
 				margin:5px;
+				
 		
 				>a{
-					&:hover{
-						color: rgb(122, 133, 228);
-						transition: color 0.3s ease; 
-					}
+					
 					text-decoration: none;
 					padding: 20px;
 					background: variables.$buttons;
 					color: variables.$white;
 					border-radius: 10px;
 					border: solid .5px white;
+					transition: color 0.3s ease-in; 
+					&:hover{
+						color: rgb(122, 133, 228);
+						background:rgb(242, 237, 243);
+						transform: scale(1.2);
+						
+					}
 					@include mixins.bp-large{
 						&:hover{
 							color: rgb(33, 202, 132);
@@ -280,16 +285,20 @@ body {
 				}
 				
 				>a{
-					&:hover{
-						color: rgb(122, 133, 228);
-						transition: color 0.3s ease; 
-					}
-					padding: 20px;
+					
+					padding: 10px;
 					text-decoration: none;
 					background: variables.$buttons;
 					color: variables.$white;
 					border-radius: 10px;
 					border: solid 1px black;
+					transition: color 0.3s ease-in; 
+					&:hover{
+						color: rgb(122, 133, 228);
+						background:rgb(5, 5, 5);
+						transform: translateY(10px);
+						
+					}
 					@include mixins.bp-large{
 						&:hover{
 							color: rgb(33, 202, 132);
@@ -326,6 +335,10 @@ body {
 		figure img{
 			width: 450px;
 			height: auto;
+			transition: .3s ease;
+			&:hover{
+				transform: scale(1.2);
+			}
 			
 			
 		}
@@ -347,6 +360,7 @@ body {
 				text-decoration: none;
 				color: white;
 			}
+
 		}
 	}
 	.questions{
@@ -596,8 +610,13 @@ footer{
 			}
 		}
 	 }
-	 .fa-twitter{
-		transform: rotate(50)
+	 .fab{
+		transition: .4s ease;
+			&:hover{
+				// transform: translate(295px, 115px);
+				transform: rotate(360deg) scale(2);
+
+			}
 	 }
 	}
 }

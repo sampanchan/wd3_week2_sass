@@ -313,10 +313,12 @@ body {
   color: #fff;
   border-radius: 10px;
   border: solid 0.5px white;
+  transition: color 0.3s ease-in;
 }
 .container .hero__image .hero .hero__ul > li > a:hover {
   color: #7a85e4;
-  transition: color 0.3s ease;
+  background: #f2edf3;
+  transform: scale(1.2);
 }
 @media screen and (min-width: 992px) {
   .container .hero__image .hero .hero__ul > li > a a:hover {
@@ -406,16 +408,18 @@ body {
   }
 }
 .container main .price__links > li > a {
-  padding: 20px;
+  padding: 10px;
   text-decoration: none;
   background: #14409e;
   color: #fff;
   border-radius: 10px;
   border: solid 1px black;
+  transition: color 0.3s ease-in;
 }
 .container main .price__links > li > a:hover {
   color: #7a85e4;
-  transition: color 0.3s ease;
+  background: #050505;
+  transform: translateY(10px);
 }
 @media screen and (min-width: 992px) {
   .container main .price__links > li > a a:hover {
@@ -455,6 +459,10 @@ body {
 .container .student__img__container figure img {
   width: 450px;
   height: auto;
+  transition: 0.3s ease;
+}
+.container .student__img__container figure img:hover {
+  transform: scale(1.2);
 }
 .container .student__img__container .student__button {
   background: #7a85e4;
@@ -716,6 +724,9 @@ footer .footer__social > ul > li > a {
 footer .footer__social > ul > li > a:hover {
   color: #e0a0e5;
 }
-footer .footer__social .fa-twitter {
-  transform: rotate(50);
+footer .footer__social .fab {
+  transition: 0.4s ease;
+}
+footer .footer__social .fab:hover {
+  transform: rotate(360deg) scale(2);
 }
